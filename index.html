@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gerenciamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-logo">
+        <div class="header-logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <span class="site-title">Painel de Gerenciamento</span>
+    </div>
+    <span class="header-badge">SISTEMA v2.0</span>
+</header>
+
+<div class="painel-principal">
+    <p class="section-title">Módulos disponíveis</p>
+
+    <div class="accordion-wrapper">
+
+        <!-- 01 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">01</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <span class="trigger-label">Cadastrar Usuário</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formCadastroUsuario">
+                        <input type="text" id="nome" placeholder="Nome Completo" required>
+                        <input type="text" id="telefone" placeholder="Telefone" required>
+                        <div class="field-group-label">Endereço</div>
+                        <input type="text" id="logradouro" placeholder="Logradouro" required>
+                        <input type="text" id="numero" placeholder="Número" required>
+                        <input type="text" id="cep" placeholder="CEP" required>
+                        <input type="text" id="bairro" placeholder="Bairro" required>
+                        <input type="text" id="cidade" placeholder="Cidade" required>
+                        <button type="submit">Salvar Usuário</button>
+                    </form>
+                    <div id="msgCadastro" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">02</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <span class="trigger-label">Buscar Usuário por ID</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formBuscarUsuario">
+                        <input type="text" id="idBusca" placeholder="Cole o ID do usuário aqui" required>
+                        <button type="submit">Buscar</button>
+                    </form>
+                    <div id="resultadoBusca"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">03</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </span>
+                <span class="trigger-label">Importar Múltiplos (Excel)</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formImportacao">
+                        <input type="file" id="arquivoPlanilha" accept=".xlsx" required>
+                        <button type="submit">Enviar Planilha</button>
+                    </form>
+                    <div id="msgImportacao" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">04</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                </span>
+                <span class="trigger-label">Cadastrar Planilha</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formCadastrarPlanilha">
+                        <input type="text" id="planNome" placeholder="Nome da Planilha" required>
+                        <input type="number" id="planTamanho" placeholder="Tamanho do Arquivo (MB)" step="0.1" required>
+                        <input type="number" id="planLinhas" placeholder="Qtd. Linhas" required>
+                        <input type="number" id="planColunas" placeholder="Qtd. Colunas" required>
+                        <input type="text" id="planUsuarioId" placeholder="ID do Usuário Dono" required>
+                        <select id="planStatus">
+                            <option value="true">Ativo</option>
+                            <option value="false">Inativo</option>
+                        </select>
+                        <button type="submit">Salvar Planilha</button>
+                    </form>
+                    <div id="msgCadPlanilha" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">05</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </span>
+                <span class="trigger-label">Cadastrar Score</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formCadastrarScore">
+                        <input type="text" id="scoreDesc" placeholder="Descrição do Score" required>
+                        <input type="text" id="scoreValor" placeholder="Valor do Score" required>
+                        <button type="submit">Salvar Score</button>
+                    </form>
+                    <div id="msgCadScore" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">06</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <span class="trigger-label">Nova Comparação</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formCadastrarComparacao">
+                        <input type="text" id="compPlanInicialId" placeholder="ID da Planilha Inicial" required>
+                        <input type="text" id="compPlanComparacaoId" placeholder="ID da Planilha de Comparação" required>
+                        <input type="text" id="compDescricao" placeholder="Descrição da Comparação" required>
+                        <input type="text" id="compScoreId" placeholder="ID do Score" required>
+                        <input type="date" id="compData" required>
+                        <button type="submit">Salvar Comparação</button>
+                    </form>
+                    <div id="msgCadComparacao" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+                <span class="trigger-index">07</span>
+                <span class="trigger-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </span>
+                <span class="trigger-label">Salvar Histórico</span>
+                <span class="trigger-arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </button>
+            <div class="accordion-body">
+                <div class="card">
+                    <form id="formCadastrarHistorico">
+                        <input type="text" id="histComparacaoId" placeholder="ID da Comparação" required>
+                        <button type="submit">Salvar Histórico</button>
+                    </form>
+                    <div id="msgCadHistorico" class="msg-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /accordion-wrapper -->
+</div><!-- /painel-principal -->
+
+<script src="script.js"></script>
+<script>
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.closest('.accordion-item');
+            const body = item.querySelector('.accordion-body');
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+                i.querySelector('.accordion-body').style.maxHeight = null;
+                i.classList.remove('is-open');
+            });
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                trigger.setAttribute('aria-expanded', 'true');
+                body.style.maxHeight = body.scrollHeight + 'px';
+                item.classList.add('is-open');
+            }
+        });
+    });
+</script>
+</body>
+</html>
