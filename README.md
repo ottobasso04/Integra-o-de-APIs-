@@ -9,7 +9,7 @@ contendo cadastro manual de usuários, planilhas, e requisições de comparaçã
 de arquivos .xls para extrair os dados direto para o banco.
 
   Visão geral do Front End
-<img width="4" height="1" alt="image" src="https://github.com/user-attachments/assets/4d8dde59-e122-43c4-a923-6a9627e249a6" />
+<img width="1916" height="949" alt="image" src="https://github.com/user-attachments/assets/f77b00a4-9001-4c6e-a7fe-308b137d87dd" />
 
 Aba para envio de arquivos Excel
 <img width="667" height="243" alt="image" src="https://github.com/user-attachments/assets/0ec70dfa-965c-43a6-be5a-549029b05d03" />
